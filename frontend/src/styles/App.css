@@ -1,0 +1,246 @@
+/* GigShield App Styles */
+
+
+/* ─── Button Base ─── */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 18px;
+    background: #0B1B33;
+    color: #F8F9FA;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: 1px solid #0B1B33;
+    cursor: pointer;
+    transition: background 0.18s ease, transform 0.15s ease, box-shadow 0.15s ease;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background: #152847;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(11, 27, 51, 0.18);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 18px;
+    background: transparent;
+    color: #0A0A0A;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: 1px solid #D1D5DB;
+    cursor: pointer;
+    transition: border-color 0.18s, background 0.18s;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    border-color: #0B1B33;
+    background: #F8F9FA;
+}
+
+.btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 12px;
+    background: transparent;
+    color: #525252;
+    font-size: 13.5px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: color 0.15s, background 0.15s;
+    text-decoration: none;
+}
+
+.btn-ghost:hover {
+    color: #0A0A0A;
+    background: #F3F4F6;
+}
+
+/* ─── Status badges ─── */
+.badge-triggered {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 8px;
+    background: #FEF2F2;
+    color: #DC2626;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    border: 1px solid #FECACA;
+}
+
+.badge-warning {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 8px;
+    background: #FEFCE8;
+    color: #CA8A04;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    border: 1px solid #FEF08A;
+}
+
+.badge-normal {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 8px;
+    background: #F0FDF4;
+    color: #16A34A;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    border: 1px solid #BBF7D0;
+}
+
+.badge-paid {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 8px;
+    background: #F0FDF4;
+    color: #16A34A;
+    font-size: 11px;
+    font-weight: 500;
+    border-radius: 3px;
+}
+
+/* ─── Nav ─── */
+.nav-link {
+    font-size: 14px;
+    font-weight: 450;
+    color: #525252;
+    text-decoration: none;
+    transition: color 0.15s;
+    padding: 4px 0;
+}
+
+.nav-link:hover {
+    color: #0A0A0A;
+}
+
+.nav-link.active {
+    color: #0A0A0A;
+}
+
+/* ─── Cards ─── */
+.widget-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 6px;
+    padding: 18px 20px;
+}
+
+.metric-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #0A0A0A;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+/* ─── Form inputs ─── */
+.form-input {
+    width: 100%;
+    padding: 9px 12px;
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #0A0A0A;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: #0B1B33;
+    box-shadow: 0 0 0 3px rgba(11, 27, 51, 0.08);
+}
+
+.form-input::placeholder {
+    color: #9CA3AF;
+}
+
+.form-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 5px;
+}
+
+/* ─── Live dot ─── */
+.live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22C55E;
+    animation: pulse-dot 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+.live-dot-red {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #EF4444;
+    animation: pulse-dot 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+.live-dot-yellow {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #EAB308;
+    animation: pulse-dot 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes pulse-dot {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.85);
+    }
+}
+
+/* ─── Recharts override ─── */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+    stroke: #F3F4F6;
+}
+
+.recharts-tooltip-wrapper {
+    outline: none !important;
+}
+
