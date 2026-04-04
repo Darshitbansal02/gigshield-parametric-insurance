@@ -4,7 +4,7 @@ from typing import List
 
 class Settings(BaseSettings):
     # ── Database ──
-    DATABASE_URL: str = "sqlite+aiosqlite:///./gigshield.db"
+    DATABASE_URL: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/gigshield"
 
     # ── Security ──
     SECRET_KEY: str = "gigshield-super-secret-key-change-in-production-2026"
@@ -24,7 +24,8 @@ class Settings(BaseSettings):
         return [o.strip() for o in self.CORS_ORIGINS.split(",")]
 
     class Config:
-        env_file = ".env"
+        import os
+        env_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env")
         env_file_encoding = "utf-8"
 
 

@@ -104,8 +104,8 @@ async def _process_zone(db: AsyncSession, pincode: str, city: str):
     logger.info(f"[TRIGGER] {len(triggered)} triggers fired in {city} ({pincode})")
 
     for trigger in triggered:
-        # 1. Deduplication: naive comparison for SQLite
-        four_hours_ago = (datetime.now(timezone.utc) - timedelta(hours=4)).replace(tzinfo=None)
+        # 1. Deduplication: PostgreSQL-compatible timezone-aware comparison
+        four_hours_ago = datetime.now(timezone.utc) - timedelta(hours=4)
         existing_event_result = await db.execute(
             select(TriggerEvent).where(
                 TriggerEvent.trigger_type == trigger["trigger_type"],

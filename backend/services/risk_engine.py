@@ -49,7 +49,7 @@ FLOOD_SAFE_PINCODES = {"411057", "411033", "560103", "500081", "110020"}
 POLLUTION_SAFE_PINCODES = {"411057", "560037", "400001"}
 
 
-def compute_zone_risk_score(pincode: str, city: str = "Pune") -> float:
+def compute_zone_risk_score(pincode: str, city: str = "Pune") -> dict:
     """
     Compute Zone Risk Score (1-100) for a given pincode.
     

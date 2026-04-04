@@ -116,4 +116,4 @@ async def root():
 
 @app.get("/api/health", tags=["health"])
 async def health_check():
-    return {"status": "healthy", "database": "sqlite", "scheduler": "running"}
+    return {"status": "healthy", "database": "PostgreSQL", "scheduler": "running"}

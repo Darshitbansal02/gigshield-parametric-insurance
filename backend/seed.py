@@ -109,7 +109,8 @@ async def seed():
         # -- Create demo workers --
         workers = []
         for w in DEMO_WORKERS:
-            risk_score = compute_zone_risk_score(w["pincode"], w["city"])
+            risk_data = compute_zone_risk_score(w["pincode"], w["city"])
+            risk_score = risk_data["score"]
             premiums = {"basic": 49, "standard": 69, "premium": 99}
 
             user = User(
