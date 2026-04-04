@@ -2,13 +2,26 @@
 
 # 🛡️ GigShield — AI-Powered Parametric Income Insurance for India's Gig Workers
 
-### _Guidewire DEVTrails 2026 — Phase 1 Submission_
+### _Guidewire DEVTrails 2026 — Phase 2: Building & Automation_
 
-**Team:** Zeroes and Ones | **University:** GLA University | **Phase 1 Deadline:** March 20, 2026
+**Team:** Zeroes and Ones | **University:** GLA University | **Phase 2 Submission:** April 4, 2026
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
-[![Phase](https://img.shields.io/badge/Phase-1%20Ideation-orange)]()
+[![Phase](https://img.shields.io/badge/Phase-2%20Automation-blue)]()
+[![Status](https://img.shields.io/badge/Status-Deployment%20Ready-success)]()
 [![Platform](https://img.shields.io/badge/Platform-Web%20App-green)]()
+
+---
+
+## 🚀 Live Demo & Deployment
+
+**Web Application (Next.js + FastAPI):** [https://gigshield-parametric-insurance--darshitbansal02.replit.app/](https://gigshield-parametric-insurance--darshitbansal02.replit.app/)
+
+> [!IMPORTANT]
+> **Demo Credentials (for Judge Review):**
+> - **Admin:** `admin@gigshield.com` | Password: `admin123`
+> - **Worker:** `ramesh@gigshield.com` | Password: `ramesh123`
+
 
 </div>
 
@@ -32,6 +45,7 @@
 14. [📅 Development Plan](#14--development-plan)
 15. [🧠 Business Logic](#15--business-logic)
 16. [Video Demo](#16-video-demo)
+17. [⚙️ Setup & Installation](#17-setup--installation)
 
 ---
 
@@ -589,24 +603,24 @@ flowchart TD
 
 | Layer | Technology | Why |
 |-------|-----------|-----|
-| **Frontend** | React.js + Tailwind CSS | Fast development, responsive UI, component-based |
-| **Backend** | Python (FastAPI) | High-performance async API framework; native Python means AI/ML runs in the same codebase — no separate microservice needed |
-| **Database** | MongoDB (via Motor async driver) | Flexible schema — ideal for evolving data models in a hackathon; async driver pairs perfectly with FastAPI |
-| **AI/ML** | Python (scikit-learn, pandas) | Industry-standard ML libraries; runs natively within FastAPI — zero integration overhead |
-| **Real-time Monitoring** | APScheduler + HTTPX | Scheduled async API polling every 15 minutes for weather/AQI data; built into FastAPI lifecycle |
-| **Payment Gateway** | Razorpay (Test Mode) | Indian-first payment solution; excellent sandbox for UPI simulation |
-| **External APIs** | OpenWeatherMap, AQICN | Free-tier weather and pollution data |
-| **Hosting** | Vercel (Frontend) + Render/Railway (Backend) | Free tiers, quick deployment, no infra overhead |
+| **Frontend** | Next.js (React) + Tailwind CSS | Ultra-fast SSR/SSG, premium aesthetics, responsive UI |
+| **Backend** | Python (FastAPI) | High-performance async framework for real-time monitoring |
+| **Database** | **PostgreSQL (Supabase)** | Relational data integrity, production-ready, cloud-hosted |
+| **AI/ML** | Python (scikit-learn, pandas) | Native integration within FastAPI for risk scoring |
+| **Monitoring** | APScheduler + HTTPX | Always-on background tasks polling Weather & AQI APIs |
+| **Payment** | Simulation Engine (UPI) | Sandbox simulation of instant parametric payouts |
+| **Hosting** | **Replit / Vercel** | Edge deployment for global availability |
+
 | **Version Control** | GitHub | Required by competition |
 
 ### Architecture Pattern
 
 ```mermaid
 flowchart LR
-    A["🖥️ Frontend\n(React + Tailwind)"] <-->|"REST API"| B["⚡ Backend\n(Python / FastAPI)"]
-    B <-->|"Motor Async"| C[("🗄️ MongoDB")]
+    A["🖥️ Frontend\n(Next.js + Tailwind)"] <-->|"REST API"| B["⚡ Backend\n(Python / FastAPI)"]
+    B <-->|"AsyncPG"| C[("🗄️ PostgreSQL\n(Supabase)")]
     B <-->|"Native Python"| D["🧠 AI/ML Models\n(scikit-learn)"]
-    B <-->|"HTTPX"| E["🌐 External APIs\n(Weather, AQI, Razorpay)"]
+    B <-->|"HTTPX"| E["🌐 External APIs\n(Weather, AQI)"]
 
     style A fill:#4A90D9,stroke:#2C5F8A,color:#fff
     style B fill:#27AE60,stroke:#1E8449,color:#fff
@@ -689,12 +703,13 @@ STEP 6: PAYOUT
 | README & idea document | ✅ Done |
 | 2-minute strategy video | ✅ Done |
 
-### Phase 2: Automation & Protection (Weeks 3–4)
+### Phase 2: Automation & Protection (Weeks 3–4) ✅ _Build Phase Complete_
 
 | Week | Focus | Key Deliverables |
 |------|-------|-------------------|
-| **Week 3** | Core Build | Worker registration flow, MongoDB schema design, Zone Risk Score model (Python), Policy purchase with Razorpay test mode |
-| **Week 4** | Automation | Weather API integration (OpenWeatherMap), AQI API integration (AQICN), Trigger detection engine, Auto-payout flow, Basic fraud checks, Worker + Admin dashboards |
+| **Week 3** | Core Build | ✅ Worker registration flow, PostgreSQL (Supabase) schema, Zone Risk Score model, Policy purchase flow |
+| **Week 4** | Automation | ✅ Weather/AQI API integration, Parametric Trigger engine, Auto-payout engine, Worker + Admin dashboards |
+
 
 ### Phase 3: Scale & Optimize (Weeks 5–6)
 
@@ -745,6 +760,64 @@ https://youtu.be/kmW-PTAe5EE
 
 ---
 
+## ⚙️ 17. Setup & Installation
+
+Follow these steps to run **GigShield** locally:
+
+### (A) Backend Setup (FastAPI)
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Darshitbansal02/gigshield-parametric-insurance.git
+   cd backend
+   ```
+
+2. **Create and activate a virtual environment:**
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Configure Environment Variables:**
+   Create a `.env` file in the `backend/` folder and add:
+   ```env
+   DATABASE_URL=postgresql+asyncpg://user:password@host:5432/dbname
+   CORS_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
+   SECRET_KEY=your_secret_key
+   DEBUG=False
+   ```
+
+5. **Initialize Database & Run Server:**
+   ```bash
+   uvicorn main:app --reload
+   ```
+   The backend will be live at `http://localhost:8000`.
+
+### (B) Frontend Setup (Next.js)
+
+1. **Navigate to the frontend folder:**
+   ```bash
+   cd ../frontend
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+   The frontend will be live at `http://localhost:3000`.
+
+---
+
 ## Future Scope
 
 > Future: Integrate real-time rider activity signals for more accurate income loss detection.
@@ -774,7 +847,7 @@ https://youtu.be/kmW-PTAe5EE
 
 **GigShield** — _AI-Powered Parametric Income Insurance_
 
-**Guidewire DEVTrails 2026 — Phase 1 Submission**
+**Guidewire DEVTrails 2026 — Phase 2 Build Submission**
 
 [⭐ Star this repo if you believe gig workers deserve better!](#)
 
