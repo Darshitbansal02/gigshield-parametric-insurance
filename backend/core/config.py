@@ -4,7 +4,7 @@ from typing import List
 
 class Settings(BaseSettings):
     # ── Database ──
-    DATABASE_URL: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/gigshield"
+    DATABASE_URL: str  # Must be provided in .env (Format: postgresql+asyncpg://user:pass@host/db)
 
     # ── Security ──
     SECRET_KEY: str = "gigshield-super-secret-key-change-in-production-2026"
@@ -16,8 +16,8 @@ class Settings(BaseSettings):
     AQICN_API_TOKEN: str = ""
 
     # ── App ──
-    CORS_ORIGINS: str = "http://localhost:3000,http://127.0.0.1:3000"
-    DEBUG: bool = True
+    CORS_ORIGINS: str  # Must be provided in .env (Comma-separated list of allowed URLs)
+    DEBUG: bool = False
 
     @property
     def cors_origins_list(self) -> List[str]:
