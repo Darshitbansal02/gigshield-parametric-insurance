@@ -44,7 +44,7 @@
 13. [🔄 Application Workflow](#13--application-workflow)
 14. [📅 Development Plan](#14--development-plan)
 15. [🧠 Business Logic](#15--business-logic)
-16. [Video Demo](#16-video-demo)
+16. [Video Demos](#16-video-demos)
 17. [⚙️ Setup & Installation](#17-setup--installation)
 
 ---
@@ -753,10 +753,13 @@ STEP 6: PAYOUT
 
 ---
 
-## 16. Video Demo
+## 16. Video Demos
 
-🎬 **Demo Video (2 min):**
+🎬 **Phase 1: Ideation & Strategy**
 https://youtu.be/kmW-PTAe5EE
+
+🎬 **Phase 2: Building & Automation**
+https://youtu.be/kSG2As1U-Os
 
 ---
 
